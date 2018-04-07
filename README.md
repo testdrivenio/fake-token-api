@@ -16,7 +16,7 @@ Fake Node/Express API used to test token-based authentication.
 
 ## Requests
 
-#### Register
+### Register
 
 Success:
 
@@ -45,7 +45,7 @@ $ curl http://localhost:1337/register \
 }
 ```
 
-#### Login
+### Login
 
 Success:
 

@@ -13,6 +13,7 @@ Fake Node/Express API used to test token-based authentication.
 1. GET http://localhost:1337/ping
 1. POST http://localhost:1337/register
 1. POST http://localhost:1337/login
+1. GET http://localhost:1337/status
 
 ## Requests
 
@@ -68,6 +69,32 @@ $ curl http://localhost:1337/login \
   -H "Content-Type: application/json" \
   -X POST \
   -d '{"email":"bad@email.com", "password": "test"}'
+
+{
+  "status": "error"
+}
+```
+
+### Status
+
+Success:
+
+```sh
+$ curl http://localhost:1337/status \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token 1234567"
+
+{
+  "status": "success"
+}
+```
+
+Failure:
+
+```sh
+$ curl http://localhost:1337/status \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token incorrect"
 
 {
   "status": "error"

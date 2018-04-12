@@ -54,7 +54,7 @@ app.get('/status', (req, res, next)  => {
       status: 'success',
     });
   } else {
-    res.status(400).json({
+    res.status(401).json({
       status: 'error'
     });
   }
